@@ -6,6 +6,7 @@ import dbConnect from "./config/dbConnect.js";
 import dotenv from "dotenv"
 import authRouter from "./routes/authRouter.js";
 import userRouter from "./routes/userRouter.js";
+import interviewRouter from "./routes/interviewRouter.js";
 dotenv.config();
 
 
@@ -24,7 +25,8 @@ app.use(cors({
 
 //routes middleware
 app.use("/api/auth", authRouter);
-app.use("/api/user", userRouter)
+app.use("/api/user", userRouter);
+app.use("/api/interview", interviewRouter);
 
 
 //db connection

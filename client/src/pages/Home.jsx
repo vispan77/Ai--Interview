@@ -35,8 +35,8 @@ function Home() {
         <div className='max-w-6xl mx-auto'>
 
           <div className='flex justify-center mb-6'>
-            <div className='bg-gray-100 text-gray-600 text-sm px-4 py-2 rounded-full flex
-            items-center gap-2'
+            <div className='bg-white/50 text-gray-600 text-sm px-4 py-2 rounded-full flex
+             items-center gap-2 shadow-2xl'
             >
               <HiSparkles size={16} className='bg-green-50 text-green-600' />
               Ai Powered Smart Interview Platform
@@ -147,8 +147,9 @@ function Home() {
                 `}
                 >
                   <div className='absolute -top-8 left-1/2 -translate-x-1/2 bg-white border-2
-                border-green-500 text-green-500 w-16 h-16 rounded-2xl flex items-center 
-                justify-center shadow-lg'>
+                   border-green-500 text-green-500 w-16 h-16 rounded-2xl flex items-center 
+                   justify-center shadow-lg'
+                  >
                     {item.icon}
                   </div>
 

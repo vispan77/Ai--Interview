@@ -3,11 +3,12 @@ import axios from "axios"
 
 const openRouterUrl = "https://openrouter.ai/api/v1/chat/completions";
 const model = "openai/gpt-oss-120b:free";
+// const model = "deepseek/deepseek-v4-flash:free"
 
-const generateResponse = async (message) => {
+const generateResponse = async (messages) => {
 
     try {
-        if (!message || !Array.isArray(message) || message.length === 0) {
+        if (!messages || !Array.isArray(messages) || messages.length === 0) {
             throw new Error("message array is empty")
         }
 
@@ -15,7 +16,7 @@ const generateResponse = async (message) => {
             openRouterUrl,
             {
                 model: model,
-                message: message
+                messages: messages
             },
             {
                 headers: {
