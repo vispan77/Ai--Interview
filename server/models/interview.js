@@ -7,7 +7,7 @@ const questionsSchema = new mongoose.Schema({
     },
     difficulty: {
         type: String,
-        required: true,
+        
 
     },
     timeLimit: {
@@ -15,11 +15,11 @@ const questionsSchema = new mongoose.Schema({
     },
     answer: {
         type: String,
-        required: true
+        
     },
     feedback: {
         type: String,
-        required: true
+        
     },
     score: {
         type: Number,
