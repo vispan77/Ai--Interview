@@ -11,7 +11,6 @@ function useGetCurrentUser() {
     const getCurrentUser = async () => {
         try {
             const result = await api.get("/user/current-user");
-            console.log("current user", result.data.data);
             dispatch(setUserData(result.data.data));
         } catch (error) {
             console.log(error);

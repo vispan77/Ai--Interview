@@ -8,8 +8,10 @@ import {
     FaChartLine,
 } from "react-icons/fa";
 import api from '../service/api';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch  } from 'react-redux';
+import { setUserData } from '../redux/userSlice';
+import { setInterviewData } from '../redux/interviewSlice';
+
 
 
 function Step1Setup({ onStart }) {
@@ -34,7 +36,6 @@ function Step1Setup({ onStart }) {
         const formData = new FormData();
         formData.append("resume", resumeFile);
         try {
-            ;
             const result = await api.post("/interview/resume", formData);
             console.log("result ", result.data);
             setRole(result.data.role);
@@ -66,7 +67,10 @@ function Step1Setup({ onStart }) {
             if (userData) {
                 dispatch(setUserData({ ...userData, credits: result.data.creditsLeft }))
             }
+            dispatch(setInterviewData(result.data));
             setLoading(false);
+            console.log(typeof result.data);
+            console.log("Dispatched")
             onStart(result.data);
 
         } catch (error) {

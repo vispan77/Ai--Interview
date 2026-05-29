@@ -256,12 +256,12 @@ const submitAnswer = async (req, res) => {
 
         if (!answer) {
             question.score = 0;
-            question.feedback = "you did not submit an answer";
+            question.feedback = "You did not submit an answer";
             question.answer = "";
 
             await interview.save();
 
-            return res.status(400).json({
+            return res.json({
                 success: false,
                 message: "Answer is required",
                 feedback: question.feedback
@@ -276,7 +276,7 @@ const submitAnswer = async (req, res) => {
 
             await interview.save();
 
-            return res.status(400).json({
+            return res.json({
                 success: false,
                 message: "Time Limit Exceeded",
                 feedback: question.feedback
